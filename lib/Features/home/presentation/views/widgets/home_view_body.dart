@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/featured_books_list_view.dart';
+import 'package:scripto_books/core/utils/styles.dart';
 
 
 class HomeViewBody extends StatelessWidget {
@@ -16,6 +17,8 @@ class HomeViewBody extends StatelessWidget {
         children: [
          CustomAppBar(),
           FeaturedBooksListView(),
+          SizedBox(height: 35,),
+          Text("Best Seller",style: Styles.titleMedium,)
 
         ]
       ),
