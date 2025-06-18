@@ -5,12 +5,12 @@ class CustomBooksItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .22,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
         child: Container(
-          
+
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             image: DecorationImage(

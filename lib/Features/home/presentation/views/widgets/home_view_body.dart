@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_app_bar.dart';
-import 'package:scripto_books/Features/home/presentation/views/widgets/custom_books_item.dart';
+import 'package:scripto_books/Features/home/presentation/views/widgets/featured_books_list_view.dart';
 
 
 class HomeViewBody extends StatelessWidget {
@@ -15,7 +15,7 @@ class HomeViewBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
          CustomAppBar(),
-          CustomBooksItem()
+          FeaturedBooksListView(),
 
         ]
       ),
