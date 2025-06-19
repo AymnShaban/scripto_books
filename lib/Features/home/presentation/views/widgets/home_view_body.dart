@@ -21,7 +21,7 @@ class HomeViewBody extends StatelessWidget {
           SizedBox(height: 20),
           Text(
             "Best Seller",
-            style: Styles.titleMedium,
+            style: Styles.textStyle20,
           ).animate().flipH(duration: Duration(seconds: 1)).slideY().slideX(),
           SizedBox(height: 10),
           BestSellerListViewItem(),

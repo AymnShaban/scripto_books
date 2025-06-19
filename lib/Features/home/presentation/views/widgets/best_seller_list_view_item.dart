@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scripto_books/core/utils/styles.dart';
 
 import '../../../../../core/utils/network_images.dart';
 import 'custom_books_item.dart';
@@ -12,7 +13,34 @@ class BestSellerListViewItem extends StatelessWidget {
       height: 120,
       child: Row(
         children: [
-          CustomBooksItem(aspectRatio: 2.5 / 4,radius: 8,image: NetworkImagesData.bookTwo,)
+          CustomBooksItem(
+            aspectRatio: 2.5 / 4,
+            radius: 8,
+            image: NetworkImagesData.bookTwo,
+          ),
+          SizedBox(width: 20),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .6,
+                child: Text(
+                  'Aymn Shaban and the best 5 programmers ',
+                  style: Styles.textStyle20,
+                ),
+              ),
+              SizedBox(height: 3),
+              Text(
+                'Aymn Shaban',
+                style: Styles.textStyle14.copyWith(color: Colors.grey),
+              ),
+              SizedBox(height: 3),
+              Text(
+                '19.99 €',
+                style: Styles.textStyle30),
+
+            ],
+          ),
         ],
       ),
     );
