@@ -4,6 +4,6 @@ abstract class Styles {
   static const titleMedium = TextStyle(
     fontWeight: FontWeight.w600,
   fontSize: 22,
-
+fontFamily: 'myFont'
   );
 }

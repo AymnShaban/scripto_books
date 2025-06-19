@@ -1,4 +1,5 @@
-class AssetsData {
-  static const bookOne = 'assets/images/logo.svg';
-  static const bookTwo = 'assets/images/search_icon.svg';
+class NetworkImagesData {
+  static const bookOne = 'https://tse1.mm.bing.net/th?id=OIP.QaqDrHSrWeTxrJVVkIYl4QHaL2&pid=Api';
+  static const bookTwo = 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/56d96263885635.5acd0047cf3e6.jpg';
+
 }

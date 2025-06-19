@@ -79,7 +79,7 @@ flutter:
   fonts:
     - family: myFont
       fonts:
-        - asset: assets/fonts/mo.otf
+        - asset: assets/fonts/Savate-BoldItalic.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
