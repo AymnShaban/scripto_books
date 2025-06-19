@@ -11,7 +11,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10),
+      padding: const EdgeInsets.only(left: 15, right: 15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -24,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
             style: Styles.textStyle20,
           ).animate().flipH(duration: Duration(seconds: 1)).slideY().slideX(),
           SizedBox(height: 10),
-          BestSellerListViewItem(),
+          BestSellerListViewItem().animate().flipH(duration: Duration(seconds: 1)).slideY().slideX(),
         ],
       ),
     );
