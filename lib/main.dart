@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scripto_books/Features/home/presentation/views/home_view.dart';
+import 'package:scripto_books/Features/splash/presentation/views/splash_view.dart';
 import 'package:scripto_books/constants.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class ScriptoApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor,
 
       ),
-      home: HomeView(),
+      home: SplashView(),
     );
   }
 }
