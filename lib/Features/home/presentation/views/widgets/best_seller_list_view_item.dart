@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/book_rating_item.dart';
 import 'package:scripto_books/core/utils/styles.dart';
 
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/network_images.dart';
 import 'custom_books_item.dart';
 
@@ -14,10 +16,16 @@ class BestSellerListViewItem extends StatelessWidget {
       height: 120,
       child: Row(
         children: [
-          CustomBooksItem(
-            aspectRatio: 2.5 / 4,
-            radius: 8,
-            image: NetworkImagesData.bookTwo,
+          GestureDetector(
+            onTap: (){
+              GoRouter.of(context).push(AppRouter.kBookDetailsView);
+
+            },
+            child: CustomBooksItem(
+              aspectRatio: 2.5 / 4,
+              radius: 8,
+              image: NetworkImagesData.bookTwo,
+            ),
           ),
           SizedBox(width: 20),
           Expanded(
