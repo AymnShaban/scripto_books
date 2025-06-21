@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/book_rating_item.dart';
+import 'package:scripto_books/Features/home/presentation/views/widgets/books_actions.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_books_item.dart';
 import 'package:scripto_books/core/utils/network_images.dart';
@@ -34,6 +35,9 @@ class BookDetailsBody extends StatelessWidget {
             SizedBox(height: 20),
 
             BookRatingItem(mainAxisAlignment: MainAxisAlignment.center),
+            SizedBox(height: 37),
+            BooksActions()
+
           ],
         ),
       ),

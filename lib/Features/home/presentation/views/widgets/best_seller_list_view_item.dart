@@ -49,7 +49,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   children: [
                     Text(
                       '19.99 €',
-                      style: Styles.textStyle30),
+                      style: Styles.textStyle20),
                     Spacer(),
                     BookRatingItem()
                   ],
