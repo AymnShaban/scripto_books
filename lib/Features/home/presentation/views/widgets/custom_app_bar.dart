@@ -13,16 +13,16 @@ class CustomAppBar extends StatelessWidget {
       padding: const EdgeInsets.only(top: 25, bottom: 5),
       child: Row(
         children: [
-          SvgPicture.asset(AssetsData.logo, width: 150).animate().flipH(duration: Duration(seconds: 1)).slideY().slideX(),
+          SvgPicture.asset(AssetsData.logo, width: 150),
           const Spacer(),
           IconButton(
             onPressed: () {
 
             },
             icon: SvgPicture.asset(AssetsData.searchIcon, width: 80),
-          ).animate().shake(duration: Duration(seconds: 1)).slideX().slideY(),
+          ).animate(),
         ],
-      ),
+      ).animate().slideY(duration: Duration(seconds: 1)).slideX(),
     );
   }
 }

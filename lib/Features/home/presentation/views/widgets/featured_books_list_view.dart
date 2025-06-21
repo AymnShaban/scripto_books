@@ -7,12 +7,14 @@ import 'package:scripto_books/core/utils/network_images.dart';
 import '../../../../../core/utils/app_router.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
-  const FeaturedBooksListView({super.key});
+  const FeaturedBooksListView({super.key,this.height = .22,this.aspectRatio = 2.7 / 4});
+final double height;
+final double aspectRatio;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .22,
+      height: MediaQuery.of(context).size.height * height ,
 
       child: ListView.builder(
         itemBuilder:
@@ -22,7 +24,7 @@ class FeaturedBooksListView extends StatelessWidget {
 
               },
               child: CustomBooksItem(
-                aspectRatio: 2.7 / 4,
+                aspectRatio: aspectRatio,
                 radius: 16,
                 image: NetworkImagesData.bookOne,
               ).animate().flip(duration: Duration(milliseconds: 1500)),

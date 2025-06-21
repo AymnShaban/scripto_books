@@ -24,7 +24,7 @@ class BooksActions extends StatelessWidget {
             bottomRight: Radius.circular(12),
             topRight: Radius.circular(12),
           ),
-          text: '19.99 €',
+          text: 'Free Preview',
         ),
       ],
     );

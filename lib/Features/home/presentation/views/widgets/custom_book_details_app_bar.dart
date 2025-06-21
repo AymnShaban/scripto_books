@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:scripto_books/core/utils/assets.dart';
 
 class CustomBookDetailsAppBar extends StatelessWidget {
   const CustomBookDetailsAppBar({super.key});
@@ -9,10 +10,13 @@ class CustomBookDetailsAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(onPressed: () {}, icon: Icon(Icons.close, size: 25)),
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.shopping_cart_outlined, size: 25),
+          icon: SvgPicture.asset(AssetsData.closeIcon, height: 30),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(AssetsData.shoppingIcon, height: 35),
         ),
       ],
     );
