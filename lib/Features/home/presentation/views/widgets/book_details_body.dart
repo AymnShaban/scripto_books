@@ -18,10 +18,13 @@ class BookDetailsBody extends StatelessWidget {
       child: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            // if this file has a lot of lines (so i can separate the code in two or three sections )
             children: [
-              CustomBookDetailsAppBar().animate().slideX(duration: Duration(seconds: 1)).slideY(),
+              CustomBookDetailsAppBar()
+                  .animate()
+                  .slideX(duration: Duration(seconds: 1))
+                  .slideY(),
               SizedBox(height: 25),
-
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 90),
                 child: CustomBooksItem(
@@ -31,23 +34,31 @@ class BookDetailsBody extends StatelessWidget {
                 ).animate().flipH(duration: Duration(seconds: 1)),
               ),
               SizedBox(height: 20),
-              Text('The Jungle Book', style: Styles.textStyle30).animate().slideY(duration: Duration(seconds: 1)).slideX(),
+              Text(
+                'The Jungle Book',
+                style: Styles.textStyle30,
+              ).animate().slideY(duration: Duration(seconds: 1)).slideX(),
               SizedBox(height: 6),
               Text(
                 'Rudyard Kipling',
                 style: Styles.textStyle16.copyWith(color: Color(0xff797885)),
               ).animate().slideY(duration: Duration(seconds: 1)).slideX(),
               SizedBox(height: 20),
-
-              BookRatingItem(mainAxisAlignment: MainAxisAlignment.center).animate().slideY(duration: Duration(seconds: 1)).slideX(),
+              BookRatingItem(
+                mainAxisAlignment: MainAxisAlignment.center,
+              ).animate().slideY(duration: Duration(seconds: 1)).slideX(),
               SizedBox(height: 40),
               BooksActions().animate().shake(duration: Duration(seconds: 1)),
               SizedBox(height: 70),
               Row(
-                children: [Text('You can also like', style: Styles.textStyle20).animate().slideY(duration: Duration(seconds: 1)).slideX()],
+                children: [
+                  Text(
+                    'You can also like',
+                    style: Styles.textStyle20,
+                  ).animate().slideY(duration: Duration(seconds: 1)).slideX(),
+                ],
               ),
               SizedBox(height: 15),
-
               FeaturedBooksListView(height: .15, aspectRatio: 2.25 / 4),
             ],
           ),
