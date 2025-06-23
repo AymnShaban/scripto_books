@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:go_router/go_router.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_books_item.dart';
 import 'package:scripto_books/core/utils/network_images.dart';
 
-import '../../../../../core/utils/app_router.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key,this.height = .22,this.aspectRatio = 2.7 / 4});
@@ -18,17 +16,11 @@ final double aspectRatio;
 
       child: ListView.builder(
         itemBuilder:
-            (context, index) => GestureDetector(
-              onTap: (){
-                GoRouter.of(context).push(AppRouter.kBookDetailsView);
-
-              },
-              child: CustomBooksItem(
-                aspectRatio: aspectRatio,
-                radius: 16,
-                image: NetworkImagesData.bookOne,
-              ).animate().flip(duration: Duration(milliseconds: 1500)),
-            ),
+            (context, index) => CustomBooksItem(
+              aspectRatio: aspectRatio,
+              radius: 16,
+              image: NetworkImagesData.bookOne,
+            ).animate().flip(duration: Duration(milliseconds: 1500)),
         itemCount: 10,
         scrollDirection: Axis.horizontal,
       ),

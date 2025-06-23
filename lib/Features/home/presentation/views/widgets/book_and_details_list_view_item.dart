@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/book_rating_item.dart';
 import 'package:scripto_books/core/utils/styles.dart';
 
-import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/network_images.dart';
 import 'custom_books_item.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookAndDetailsListViewItem extends StatelessWidget {
+  const BookAndDetailsListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,6 @@ class BestSellerListViewItem extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: (){
-              GoRouter.of(context).push(AppRouter.kBookDetailsView);
 
             },
             child: CustomBooksItem(
