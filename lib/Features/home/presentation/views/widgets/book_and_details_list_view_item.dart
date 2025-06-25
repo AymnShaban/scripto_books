@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:scripto_books/Features/home/presentation/views/widgets/book_rating_item.dart';
 import 'package:scripto_books/core/utils/styles.dart';
 
 import '../../../../../core/utils/network_images.dart';
@@ -32,23 +31,28 @@ class BookAndDetailsListViewItem extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .6,
                   child: Text(
-                    'Aymn Shaban and the best 5 programmers ',
+                    'Title \n title ',
                     style: Styles.textStyle20,
                   ),
                 ),
                 SizedBox(height: 3),
                 Text(
-                  'Aymn Shaban',
+                  'SubTitle ',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: Styles.textStyle14.copyWith(color: Colors.grey),
                 ),
                 SizedBox(height: 3),
                 Row(
                   children: [
                     Text(
-                      '19.99 €',
+                      'Free 😊',
                       style: Styles.textStyle20),
                     Spacer(),
-                    BookRatingItem()
+                    Text(
+                      'Aymn Shaban',
+                      style: Styles.textStyle14.copyWith(color: Colors.grey),
+                    ),
                   ],
                 ),
 

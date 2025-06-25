@@ -26,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 30),
                 child:
-                    Text("Best Seller", style: Styles.textStyle20)
+                    Text("Books For Beginners", style: Styles.textStyle20)
                         .animate()
                         .flipH(duration: Duration(seconds: 1))
                         .slideY()
