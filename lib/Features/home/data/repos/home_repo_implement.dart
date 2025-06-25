@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:scripto_books/Features/home/data/models/books_model.dart';
 import 'package:scripto_books/Features/home/data/repos/home_repo.dart';
 import 'package:scripto_books/core/errors/failures.dart';
@@ -10,7 +11,7 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failures, List<BooksModel>>> fetchRecentBooks() async {
+  Future<Either<Failure, List<BooksModel>>> fetchRecentBooks() async {
     try {
       var data = await apiService.get(endPoint: 'recent');
       List<BooksModel> books = [];
@@ -19,12 +20,21 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+      return left(
+        ServerFailure.fromDioError(e),
+      );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
     }
   }
 
   @override
-  Future<Either<Failures, List<BooksModel>>> fetchFeaturedBooks() {
+  Future<Either<Failure, List<BooksModel>>> fetchFeaturedBooks() {
     throw UnimplementedError();
   }
 }
