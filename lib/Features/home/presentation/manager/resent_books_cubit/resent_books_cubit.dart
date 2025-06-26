@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scripto_books/Features/home/data/models/books_model.dart';
 import 'package:scripto_books/Features/home/data/repos/home_repo.dart';
 
