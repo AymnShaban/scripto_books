@@ -1,4 +1,4 @@
-part of 'beginners_books_cubit.dart';
+part of 'beginner_books_cubit.dart';
 
 @immutable
 sealed class BeginnersBooksState {}
