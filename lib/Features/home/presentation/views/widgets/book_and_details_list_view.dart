@@ -5,8 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:scripto_books/Features/home/presentation/manager/beginner_books_cubit/beginner_books_cubit.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/book_and_details_list_view_item.dart';
 import 'package:scripto_books/core/utils/app_router.dart';
-import 'package:scripto_books/core/utils/network_images.dart';
 import 'package:scripto_books/core/widgets/error_message_widget.dart';
+import 'package:scripto_books/core/widgets/loading_probability.dart';
 
 class BookAndDetailsListView extends StatelessWidget {
   const BookAndDetailsListView({super.key});
@@ -29,13 +29,7 @@ class BookAndDetailsListView extends StatelessWidget {
                       GoRouter.of(context).push(AppRouter.kBookDetailsView);
                     },
                     child:
-                        BookAndDetailsListViewItem(
-                              image: state.books[index].image ?? NetworkImagesData.bookOne ,
-                              title: state.books[index].title ?? 'Try again bro ',
-                              author: state.books[index].authors ?? 'Waiting bro',
-                              price: 'Free 😀',
-                              subTitle: state.books[index].subtitle??'I\'ll tell you everything bro but please wait 😶' ,
-                            )
+                        BookAndDetailsListViewItem(books: state.books[index])
                             .animate()
                             .flipH(duration: Duration(seconds: 1))
                             .slideY()
@@ -50,33 +44,7 @@ class BookAndDetailsListView extends StatelessWidget {
             ),
           );
         } else {
-          return SliverList.builder(
-            itemCount: 20,
-            itemBuilder:
-                (context, index) => Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).push(AppRouter.kBookDetailsView);
-                    },
-                    child:
-                        BookAndDetailsListViewItem(
-                              subTitle: '',
-                              price: '',
-                              author: '',
-                              title: '',
-                              image: '',
-                            )
-                            .animate()
-                            .flipH(duration: Duration(seconds: 1))
-                            .slideY()
-                            .slideX(),
-                  ),
-                ),
-          );
+          return SliverToBoxAdapter(child: LoadingProbability());
         }
       },
     );

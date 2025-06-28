@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:scripto_books/Features/home/data/models/books_model.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/book_and_details_list_view_item.dart';
-import 'package:scripto_books/core/utils/network_images.dart';
 
-class BookAndDetailsListView extends StatelessWidget {
-  const BookAndDetailsListView({super.key});
+class BookAndDetailsListViewForSearch extends StatelessWidget {
+  const BookAndDetailsListViewForSearch({super.key, required this.books});
+
+  final BooksModel books;
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +19,7 @@ class BookAndDetailsListView extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {},
                 child:
-                    BookAndDetailsListViewItem(
-                          image: NetworkImagesData.bookTwo,
-                          title: 'title',
-                          author: 'aymn shaban',
-                          price: 'free',
-                          subTitle: 'davsvsdv',
-                        )
+                    BookAndDetailsListViewItem(books: books)
                         .animate()
                         .flipH(duration: Duration(seconds: 1))
                         .slideY()

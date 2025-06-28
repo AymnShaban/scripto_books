@@ -1,11 +1,11 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:scripto_books/Features/home/data/models/books_model.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/book_rating_item.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/books_actions.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_books_item.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/featured_books_list_view.dart';
-import 'package:scripto_books/core/utils/network_images.dart';
 import 'package:scripto_books/core/utils/styles.dart';
 
 class BookDetailsBody extends StatelessWidget {
@@ -30,7 +30,7 @@ class BookDetailsBody extends StatelessWidget {
                 child: CustomBooksItem(
                   aspectRatio: 2.7 / 4,
                   radius: 16,
-                  image: NetworkImagesData.bookOne,
+                  books: BooksModel(),
                 ).animate().flipH(duration: Duration(seconds: 1)),
               ),
               SizedBox(height: 20),

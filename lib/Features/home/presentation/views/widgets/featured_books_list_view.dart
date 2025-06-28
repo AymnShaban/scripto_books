@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:scripto_books/Features/home/data/models/books_model.dart';
 import 'package:scripto_books/Features/home/presentation/manager/resent_books_cubit/resent_books_cubit.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_books_item.dart';
-import 'package:scripto_books/core/utils/network_images.dart';
 import 'package:scripto_books/core/widgets/error_message_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -25,19 +25,15 @@ class FeaturedBooksListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * height,
 
-            child: Skeletonizer(
-              enabled: false,
-              child: ListView.builder(
-                itemBuilder:
-                    (context, index) => CustomBooksItem(
-                      aspectRatio: aspectRatio,
-                      radius: 16,
-                      image:
-                          state.books[index].image ?? NetworkImagesData.bookTwo,
-                    ).animate().flip(duration: Duration(milliseconds: 1500)),
-                itemCount: state.books.length,
-                scrollDirection: Axis.horizontal,
-              ),
+            child: ListView.builder(
+              itemBuilder:
+                  (context, index) => CustomBooksItem(
+                    aspectRatio: aspectRatio,
+                    radius: 16,
+                    books: state.books[index],
+                  ).animate().flip(duration: Duration(milliseconds: 1500)),
+              itemCount: state.books.length,
+              scrollDirection: Axis.horizontal,
             ),
           );
         } else if (state is ResentBooksFailureState) {
@@ -58,9 +54,9 @@ class FeaturedBooksListView extends StatelessWidget {
                     (context, index) => CustomBooksItem(
                       aspectRatio: aspectRatio,
                       radius: 16,
-                      image: NetworkImagesData.bookOne,
-                    ).animate().flip(duration: Duration(milliseconds: 1500)),
-                itemCount: 10,
+                      books: BooksModel(),
+                    ),
+                itemCount: 7,
                 scrollDirection: Axis.horizontal,
               ),
             ),
