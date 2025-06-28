@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/book_and_details_list_view_item.dart';
+import 'package:scripto_books/core/utils/network_images.dart';
 
 class BookAndDetailsListView extends StatelessWidget {
   const BookAndDetailsListView({super.key});
@@ -16,7 +17,13 @@ class BookAndDetailsListView extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {},
                 child:
-                    BookAndDetailsListViewItem()
+                    BookAndDetailsListViewItem(
+                          image: NetworkImagesData.bookTwo,
+                          title: 'title',
+                          author: 'aymn shaban',
+                          price: 'free',
+                          subTitle: 'davsvsdv',
+                        )
                         .animate()
                         .flipH(duration: Duration(seconds: 1))
                         .slideY()

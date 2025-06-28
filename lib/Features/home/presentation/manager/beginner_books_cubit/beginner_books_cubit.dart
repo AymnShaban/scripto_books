@@ -14,6 +14,7 @@ class BeginnerBooksCubit extends Cubit<BeginnersBooksState> {
     emit(BeginnersBooksLoadingState());
     var result = await homeRepo.fetchBeginnersBooks();
     result.fold(
+      // fold is like what you will do if there is a failure or there is a success from your Either class
       (failure) {
         emit(BeginnersBooksFailureState(failure.errMessage));
       },

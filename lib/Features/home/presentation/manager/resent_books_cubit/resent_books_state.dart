@@ -13,8 +13,8 @@ final class ResentBooksFailureState extends ResentBooksState {
   ResentBooksFailureState(this.errorMessage);
 }
 
-final class ResentBooksSuccess extends ResentBooksState {
+final class ResentBooksSuccessState extends ResentBooksState {
   final List<BooksModel> books;
 
-  ResentBooksSuccess(this.books);
+  ResentBooksSuccessState(this.books);
 }

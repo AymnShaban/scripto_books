@@ -17,7 +17,7 @@ class ResentBooksCubit extends Cubit<ResentBooksState> {
         emit(ResentBooksFailureState(failure.errMessage));
       },
       (books) {
-        emit(ResentBooksSuccess(books));
+        emit(ResentBooksSuccessState(books));
       },
     );
   }

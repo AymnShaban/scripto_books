@@ -21,20 +21,14 @@ class HomeRepoImpl implements HomeRepo {
       return right(books);
     } catch (e) {
       if (e is DioException) {
-      return left(
-        ServerFailure.fromDioError(e),
-      );
+        return left(ServerFailure.fromDioError(e));
       }
-      return left(
-        ServerFailure(
-          e.toString(),
-        ),
-      );
+      return left(ServerFailure(e.toString()));
     }
   }
 
   @override
-  Future<Either<Failure, List<BooksModel>>> fetchBeginnersBooks() async{
+  Future<Either<Failure, List<BooksModel>>> fetchBeginnersBooks() async {
     try {
       var data = await apiService.get(endPoint: 'search/beginners');
       List<BooksModel> books = [];
@@ -44,15 +38,9 @@ class HomeRepoImpl implements HomeRepo {
       return right(books);
     } catch (e) {
       if (e is DioException) {
-        return left(
-          ServerFailure.fromDioError(e),
-        );
+        return left(ServerFailure.fromDioError(e));
       }
-      return left(
-        ServerFailure(
-          e.toString(),
-        ),
-      );
+      return left(ServerFailure(e.toString()));
     }
   }
 }
