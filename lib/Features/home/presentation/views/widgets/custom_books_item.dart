@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:scripto_books/core/utils/assets.dart';
 
 class CustomBooksItem extends StatelessWidget {
   const CustomBooksItem({
@@ -16,15 +18,15 @@ class CustomBooksItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
-      child: AspectRatio(
-        aspectRatio: aspectRatio,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(radius),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(image),
-            ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: AspectRatio(
+          aspectRatio: aspectRatio,
+          child: CachedNetworkImage(
+            fit: BoxFit.cover,
+            imageUrl: image,
+            placeholder: (context, url) => Image.asset(AssetsData.aymnBook),
+            errorWidget: (context, url, error) => Image.asset(AssetsData.errorBook),
           ),
         ),
       ),
