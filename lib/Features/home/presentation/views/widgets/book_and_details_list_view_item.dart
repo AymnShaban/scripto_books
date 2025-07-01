@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scripto_books/Features/home/data/models/books_model.dart';
 import 'package:scripto_books/core/utils/styles.dart';
 
+import '../../../../../core/utils/network_images.dart';
 import 'custom_books_item.dart';
 
 class BookAndDetailsListViewItem extends StatelessWidget {
@@ -23,7 +24,7 @@ class BookAndDetailsListViewItem extends StatelessWidget {
             child: CustomBooksItem(
               aspectRatio: 2.5 / 4,
               radius: 8,
-              books: books,
+              image: books.image ?? NetworkImagesData.bookOne,
             ),
           ),
           SizedBox(width: 20),

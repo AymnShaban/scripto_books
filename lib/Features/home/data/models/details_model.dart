@@ -11,8 +11,8 @@
 // / url : "https://www.dbooks.org/invent-your-own-computer-games-with-python-1503212300/"
 // / download : "https://www.dbooks.org/d/1503212300-1635507922-39943ccf97e71c6e/"
 
-class SearchModel {
-  SearchModel({
+class DetailsModel {
+  DetailsModel({
       this.status, 
       this.id, 
       this.title, 
@@ -26,7 +26,7 @@ class SearchModel {
       this.url, 
       this.download,});
 
-  SearchModel.fromJson(dynamic json) {
+  DetailsModel.fromJson(dynamic json) {
     status = json['status'];
     id = json['id'];
     title = json['title'];

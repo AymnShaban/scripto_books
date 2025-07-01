@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:scripto_books/Features/home/data/models/books_model.dart';
 import 'package:scripto_books/Features/home/presentation/manager/resent_books_cubit/resent_books_cubit.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_books_item.dart';
 import 'package:scripto_books/core/widgets/error_message_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+
+import '../../../../../core/utils/network_images.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({
@@ -30,7 +31,7 @@ class FeaturedBooksListView extends StatelessWidget {
                   (context, index) => CustomBooksItem(
                     aspectRatio: aspectRatio,
                     radius: 16,
-                    books: state.books[index],
+                    image: state.books[index].image ?? NetworkImagesData.bookOne,
                   ).animate().flip(duration: Duration(milliseconds: 1500)),
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
@@ -54,7 +55,7 @@ class FeaturedBooksListView extends StatelessWidget {
                     (context, index) => CustomBooksItem(
                       aspectRatio: aspectRatio,
                       radius: 16,
-                      books: BooksModel(),
+                      image: NetworkImagesData.bookOne,
                     ),
                 itemCount: 7,
                 scrollDirection: Axis.horizontal,
