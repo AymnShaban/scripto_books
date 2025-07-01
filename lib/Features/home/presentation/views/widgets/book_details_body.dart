@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scripto_books/Features/home/presentation/manager/book_details_cubit/book_details_cubit.dart';
+import 'package:scripto_books/Features/home/presentation/views/widgets/book_details_text16.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/books_actions.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_books_item.dart';
@@ -45,28 +46,32 @@ class BookDetailsBody extends StatelessWidget {
                       style: Styles.textStyle30,
                     ).animate().slideY(duration: Duration(seconds: 1)).slideX(),
                     SizedBox(height: 6),
-                    Text(
-                      state.book.authors ?? 'Rudyard Kipling',
-                      style: Styles.textStyle16.copyWith(
-                        color: Color(0xff797885),
-                      ),
-                    ).animate().slideY(duration: Duration(seconds: 1)).slideX(),
+                    BookDetailsText16(
+                      text:
+                          "• Authors: ${state.book.authors ?? 'Rudyard Kipling'}",
+                    ),
                     SizedBox(height: 6),
-
-                    Text(
-                      textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
-                      state.book.subtitle ?? 'SubTitle for this book ',
-                      style: Styles.textStyle16.copyWith(
-                        color: Color(0xff797885),
-                      ),
-                    ).animate().slideY(duration: Duration(seconds: 1)).slideX(),
+                    BookDetailsText16(
+                      text:
+                          "• SubTitle: ${state.book.subtitle ?? 'subtitle subtitle subtitle subtitle'}",
+                    ),
+                    SizedBox(height: 6),
+                    Row(
+                      children: [
+                        BookDetailsText16(
+                          text: "• Pages: ${state.book.pages ?? '000'} ",
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 6),
+                    BookDetailsText16(
+                      text:
+                          "• Description: ${state.book.description ?? 'Description for this book '}",
+                    ),
                     SizedBox(height: 40),
                     BooksActions(
                       onPressedDownload: () {
-                        state.book.download;
                       },
-
                       onPressedPreview: () {},
                     ).animate().shake(duration: Duration(seconds: 1)),
                     SizedBox(height: 70),

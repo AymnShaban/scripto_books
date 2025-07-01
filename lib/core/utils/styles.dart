@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:scripto_books/constants.dart';
 
 abstract class Styles {
@@ -24,6 +24,7 @@ abstract class Styles {
   );
 
   static const textStyle16 = TextStyle(
+    color: Colors.white54,
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
