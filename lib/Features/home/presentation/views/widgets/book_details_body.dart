@@ -8,7 +8,6 @@ import 'package:scripto_books/Features/home/presentation/views/widgets/custom_bo
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_books_item.dart';
 import 'package:scripto_books/core/utils/styles.dart';
 import 'package:scripto_books/core/widgets/error_message_widget.dart';
-import 'package:scripto_books/core/widgets/loading_probability.dart';
 
 import '../../../../../core/utils/network_images.dart';
 
@@ -83,7 +82,7 @@ class BookDetailsBody extends StatelessWidget {
         } else if (state is BookDetailsFailureState) {
           return ErrorMessageWidget(errorMessage: state.errorMessage);
         } else {
-          return LoadingProbability();
+          return Container();
         }
       },
     );

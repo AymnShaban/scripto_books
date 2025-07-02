@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:scripto_books/Features/home/presentation/manager/resent_books_cubit/resent_books_cubit.dart';
 import 'package:scripto_books/Features/home/presentation/views/widgets/custom_books_item.dart';
+import 'package:scripto_books/core/utils/app_router.dart';
 import 'package:scripto_books/core/widgets/error_message_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -28,11 +30,16 @@ class FeaturedBooksListView extends StatelessWidget {
 
             child: ListView.builder(
               itemBuilder:
-                  (context, index) => CustomBooksItem(
-                    aspectRatio: aspectRatio,
-                    radius: 16,
-                    image: state.books[index].image ?? NetworkImagesData.bookOne,
-                  ).animate().flip(duration: Duration(milliseconds: 1500)),
+                  (context, index) => GestureDetector(
+                    onTap: (){
+                      GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: state.books[index].id);
+                    },
+                    child: CustomBooksItem(
+                      aspectRatio: aspectRatio,
+                      radius: 16,
+                      image: state.books[index].image ?? NetworkImagesData.bookOne,
+                    ).animate().flip(duration: Duration(milliseconds: 1500)),
+                  ),
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
             ),
