@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scripto_books/Features/home/data/models/details_model.dart';
+import 'package:scripto_books/core/utils/direct_download.dart';
+import 'package:scripto_books/core/utils/storage_permission.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
@@ -14,7 +16,13 @@ class BooksActions extends StatelessWidget {
     return Row(
       children: [
         CustomButton(
-          onPressed: () {},
+          onPressed: () {
+            requestStoragePermission(context);
+            downloadToDownloadsFolder(
+              detailsModel.download!,
+              '${detailsModel.title}.pdf',
+            );
+          },
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(12),
             topLeft: Radius.circular(12),
