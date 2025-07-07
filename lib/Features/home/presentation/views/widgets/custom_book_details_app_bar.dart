@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:scripto_books/core/utils/app_router.dart';
@@ -21,7 +22,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
         IconButton(
           onPressed: () {},
           icon: SvgPicture.asset(AssetsData.shoppingIcon, height: 35),
-        ),
+        ).animate().slideX(duration: Duration(seconds: 1)).slideY(),
       ],
     );
   }

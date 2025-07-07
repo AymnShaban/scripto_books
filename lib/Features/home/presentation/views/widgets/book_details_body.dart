@@ -26,10 +26,7 @@ class BookDetailsBody extends StatelessWidget {
                 child: Column(
                   // if this file has a lot of lines (so i can separate the code in two or three sections )
                   children: [
-                    CustomBookDetailsAppBar()
-                        .animate()
-                        .slideX(duration: Duration(seconds: 1))
-                        .slideY(),
+                    CustomBookDetailsAppBar(),
                     SizedBox(height: 25),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 90),
@@ -68,11 +65,7 @@ class BookDetailsBody extends StatelessWidget {
                           "• Description: ${state.book.description ?? 'Description for this book '}",
                     ),
                     SizedBox(height: 40),
-                    BooksActions(
-                      onPressedDownload: () {
-                      },
-                      onPressedPreview: () {},
-                    ).animate().shake(duration: Duration(seconds: 1)),
+                    BooksActions(detailsModel: state.book),
                     SizedBox(height: 70),
                   ],
                 ),
