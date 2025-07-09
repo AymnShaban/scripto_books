@@ -5,17 +5,19 @@ import '../../../../../constants.dart';
 import '../../../../../core/utils/assets.dart';
 
 class CustomSearchTextFiled extends StatelessWidget {
-  const CustomSearchTextFiled({super.key});
+  const CustomSearchTextFiled({super.key, required this.onChanged});
+
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       style: buildTextStyle(),
-      onChanged: (data) {},
+      onSubmitted: onChanged,
 
       decoration: InputDecoration(
         hintText: "Search",
-        counterText: 'The result is 30 Books',
+        counterText: 'Write what you want with out space at the end',
         counterStyle: buildTextStyle().copyWith(fontSize: 12),
         hintStyle: buildTextStyle(),
         suffixIcon: SvgPicture.asset(AssetsData.searchIcon, width: 70),

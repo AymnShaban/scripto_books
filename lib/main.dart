@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scripto_books/constants.dart';
 import 'package:scripto_books/core/utils/app_router.dart';
-import 'package:scripto_books/core/utils/direct_download.dart';
+import 'package:scripto_books/core/widgets/download/direct_download.dart';
 import 'package:scripto_books/core/utils/providers.dart';
 import 'package:scripto_books/core/utils/service_locator.dart';
 

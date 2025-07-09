@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:scripto_books/Features/home/data/repos/home_repo_implement.dart';
 import 'package:scripto_books/Features/home/presentation/manager/book_details_cubit/book_details_cubit.dart';
 import 'package:scripto_books/Features/home/presentation/views/book_details_view.dart';
+import 'package:scripto_books/Features/search/data/repos/search_repo_impl.dart';
+import 'package:scripto_books/Features/search/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:scripto_books/Features/search/presentation/views/search_view.dart';
 import 'package:scripto_books/core/utils/service_locator.dart';
 
@@ -22,12 +24,16 @@ abstract class AppRouter {
         builder:
             (context, state) => BlocProvider(
               create: (context) => BookDetailsCubit(getIt.get<HomeRepoImpl>()),
-              child: BookDetailsView(id: state.extra as String,),
+              child: BookDetailsView(id: state.extra as String),
             ),
       ),
       GoRoute(
         path: kSearchView,
-        builder: (context, state) => const SearchView(),
+        builder:
+            (context, state) => BlocProvider(
+              create: (context) => SearchCubit(getIt.get<SearchRepoImpl>()),
+              child: SearchView(),
+            ),
       ),
     ],
   );

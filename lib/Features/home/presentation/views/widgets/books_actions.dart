@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scripto_books/Features/home/data/models/details_model.dart';
-import 'package:scripto_books/core/utils/direct_download.dart';
+import 'package:scripto_books/core/widgets/download/direct_download.dart';
 import 'package:scripto_books/core/utils/storage_permission.dart';
 import 'package:url_launcher/url_launcher.dart';
 
