@@ -27,6 +27,7 @@ caching).
 • Enabled book downloads by implementing local storage access using path_provider and 
 android_path_provider, with runtime permissions handled via permission_handler.  
 
+# Loading the app preview "please wait"
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9bb48696-ce4f-48f4-b856-8f92817d6902" width="22.5%" />
   <img src="https://github.com/user-attachments/assets/14992ac6-edad-4aea-99d4-8545934f119a" width="22.5%" />
